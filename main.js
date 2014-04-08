@@ -58,7 +58,7 @@ var states = {
     WV: 1,
     WI: 1,
     WY: 1
-}
+};
 
 console.log(info);
 
@@ -73,7 +73,7 @@ var promptInfo = function(infoObj, name) {
         i = infoObj[name]['correct' + name](inputInfo);
     }
     return inputInfo
-}
+};
 
 info.Phone.correctPhone = function(value) {
     if (value.length !== 12) {
@@ -85,7 +85,7 @@ info.Phone.correctPhone = function(value) {
         alert('Phone number must be xxx-xxx-xxxx');
         return false;
     }
-}
+};
 
 info.BirthDate.correctBirthDate = function(value) {
     if (value.length !== 8) {
@@ -97,7 +97,7 @@ info.BirthDate.correctBirthDate = function(value) {
         alert('Birth Date must be xx/xx/xx');
         return false;
     }
-}
+};
 
 info.PostalCode.correctPostalCode = function(value) {
     if (value.length === 10 && value[5] === '-') {
@@ -108,7 +108,7 @@ info.PostalCode.correctPostalCode = function(value) {
         alert('Postal code must be xxxxx or xxxxx-xxxx')
         return false;
     }
-}
+};
 
 info.State.correctState = function(value) {
     if (states[value.toUpperCase()] === 1) {
@@ -116,16 +116,7 @@ info.State.correctState = function(value) {
     } else {
         return false;
     }
-    // if (value.length !== 2) {
-    //     alert('State must be the two state capital abbreviatin(ex: CO)');
-    //     return false;
-    // } else if (value === value.toUpperCase()) {
-    //     return true;
-    // } else {
-    //     alert('State must be the two state capital abbreviatin(ex: CO)');
-    //     return false;
-    // }
-}
+};
 
 info.Married.correctMarried = function(value) {
     if (value.toUpperCase() === 'YES' || value.toUpperCase() === 'NO') {
@@ -134,7 +125,7 @@ info.Married.correctMarried = function(value) {
         alert('Married must be yes or no');
         return false;
     }
-}
+};
 
 for (var key in info) {
     if (info.hasOwnProperty(key)) {
